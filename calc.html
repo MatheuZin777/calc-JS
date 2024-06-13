@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+        background-color: rgb(255, 255, 255);
+    }
+
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 2px solid black;
+        height: 100vh;
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn input {
+        margin: 5px;
+        border: none;
+        width: 80px;
+        height: 25px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        border: 1px solid black;
+        background-color: rgb(0, 162, 255);
+        color: aliceblue;
+    }
+
+    .btn input:hover{
+        background-color: rgb(5, 6, 6);
+        transition: .5s;
+    }
+
+    input{
+        margin: 10px;
+        border: none;
+        border-bottom: 2px solid black;
+        outline: none;
+        color: black;
+        
+    }
+
+    input::placeholder{
+        color: rgb(0, 0, 0);
+        font-size: 12px;
+    }
+
+    .reset{
+        background-color: black;
+        color: aliceblue;
+        border: none;
+        width: 50px;
+
+    }
+
+    a button{
+        border: none;
+        width: 30px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+
+</style>
+
+<body>
+    <form>
+        <h1>Calcular</h1>
+        <!-- <label>Coloque um numero:</label> -->
+        <input type="number" id="num1" placeholder="Coloque um numero">
+        <!-- <label>Coloque outro numero:</label> -->
+        <input type="number" id="num2" placeholder="Coloque outro numero">
+
+
+        <!--compo do resultado-->
+        <label for="resultado">Resultado:</label>
+        <input type="text" id="resultado" readonly>
+
+        <!--Butons-->
+        <div class="btn">
+            <input  type="button" value="Somar" onclick="somar()">
+            <input  type="button" value="Subtrair" onclick="subt()">
+            <input  type="button" value="Multiplicar" onclick="mult()">
+            <input  type="button" value="Dividir" onclick="divi()">
+        </div>
+
+        <a href="#"><button type="reset" ><img width="20" height="20" src="atu.gif" alt="refresh--v1"/></button></a>
+    </form>
+
+    <script>
+        function somar() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('resultado').value = num1 + num2;
+        }
+        function subt() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('resultado').value = num1 - num2;
+        }
+        function mult() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('resultado').value = num1 * num2;
+        }
+        function divi() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('resultado').value = num1 / num2;
+        }
+
+    </script>
+</body>
+
+</html>
